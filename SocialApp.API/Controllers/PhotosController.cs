@@ -151,7 +151,7 @@ namespace SocialApp.API.Controllers
             }
 
             if (photoFromRepo.PublicId == null)
-            {
+            { 
                  _repo.Delete(photoFromRepo);
             }
            
