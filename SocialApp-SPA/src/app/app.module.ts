@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BsDatepickerConfig, BsDatepickerModule, BsDropdownModule, TabsModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -37,6 +38,20 @@ export class CustomHammerConfig extends HammerGestureConfig {
    };
 }
 
+import {Pipe, PipeTransform} from '@angular/core';
+
+
+@Pipe({
+  name: 'timeAgo',
+  pure: false
+})
+export class TimeAgoExtendsPipePipe extends TimeAgoPipe implements PipeTransform {
+
+  transform(value: string): string {
+    return super.transform(value);
+  }
+}
+
 @NgModule({
    declarations: [
       AppComponent,
@@ -49,7 +64,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
+      TimeAgoPipe
    ],
    imports: [
       BrowserModule,

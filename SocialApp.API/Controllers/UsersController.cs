@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SocialApp.API.Data;
 using SocialApp.API.Dtos;
+using SocialApp.API.Helpers;
 
 namespace SocialApp.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("[controller]")]
     [ApiController]
