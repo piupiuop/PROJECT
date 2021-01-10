@@ -3,7 +3,7 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { BsDatepickerConfig, BsDatepickerModule, BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import { BsDatepickerConfig, BsDatepickerModule, BsDropdownModule, ButtonsModule, PaginationModule, TabsModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 import {TimeAgoPipe} from 'time-ago-pipe';
 
@@ -70,8 +70,10 @@ export class TimeAgoExtendsPipePipe extends TimeAgoPipe implements PipeTransform
    imports: [
       BrowserModule,
       BrowserAnimationsModule,
+      PaginationModule.forRoot(),
       HttpClientModule,
       FormsModule,
+      ButtonsModule.forRoot(),
       ReactiveFormsModule,
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
