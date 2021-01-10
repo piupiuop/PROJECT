@@ -39,6 +39,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
 }
 
 import {Pipe, PipeTransform} from '@angular/core';
+import { ListsResolver } from './_resolvers/lists.resolver';
 
 
 @Pipe({
@@ -93,7 +94,8 @@ export class TimeAgoExtendsPipePipe extends TimeAgoPipe implements PipeTransform
       MemberListResolver,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig },
       MemberEditResolver,
-      PreventUnsavedChanges
+      PreventUnsavedChanges,
+      ListsResolver
    ],
    bootstrap: [
       AppComponent
