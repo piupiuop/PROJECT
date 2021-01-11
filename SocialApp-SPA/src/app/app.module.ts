@@ -31,6 +31,12 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/member-list/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
 
+import {Pipe, PipeTransform} from '@angular/core';
+import { ListsResolver } from './_resolvers/lists.resolver';
+import { MessagesResolver } from './_resolvers/messages.resolver';
+import { MemberMessagesComponent } from './members/member-list/member-messages/member-messages.component';
+
+
 export class CustomHammerConfig extends HammerGestureConfig {
    overrides = {
       pinch: { enable: false },
@@ -38,8 +44,6 @@ export class CustomHammerConfig extends HammerGestureConfig {
    };
 }
 
-import {Pipe, PipeTransform} from '@angular/core';
-import { ListsResolver } from './_resolvers/lists.resolver';
 
 
 @Pipe({
@@ -66,7 +70,8 @@ export class TimeAgoExtendsPipePipe extends TimeAgoPipe implements PipeTransform
       MemberDetailComponent,
       MemberEditComponent,
       PhotoEditorComponent,
-      TimeAgoPipe
+      TimeAgoPipe,
+      MemberMessagesComponent
    ],
    imports: [
       BrowserModule,
@@ -95,7 +100,8 @@ export class TimeAgoExtendsPipePipe extends TimeAgoPipe implements PipeTransform
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig },
       MemberEditResolver,
       PreventUnsavedChanges,
-      ListsResolver
+      ListsResolver,
+      MessagesResolver
    ],
    bootstrap: [
       AppComponent
