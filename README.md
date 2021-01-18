@@ -1,1 +1,2 @@
-Am realizat proiectul cu versiuni mai vechi de dotnetcore si angular , si in ceea ce priveste baza de date , sqlite , puteti vedea in JSON-uri. 
+Am realizat proiectul cu versiuni mai vechi de dotnetcore si angular , si in ceea ce priveste baza de date , sqlite , puteti vedea in JSON-uri. Am inceput in social app , 
+https://github.com/piupiuop/SocialApp , si am continuat aici.
